@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Liste des Tâches</title>
+</head>
+<body>
+  <h1>Liste des Tâches</h1>
+  <ul>
+    <% tasks.forEach(task => { %>
+      <li>
+        <%= task.title %>
+        <a href="/delete-task/<%= task.id %>">Supprimer</a>
+      </li>
+    <% }); %>
+  </ul>
+
+  <h2>Ajouter une Tâche</h2>
+  <form action="/add-task" method="post">
+    <input type="text" name="title" placeholder="Nom de la tâche" required>
+    <button type="submit">Ajouter</button>
+  </form>
+</body>
+</html>
